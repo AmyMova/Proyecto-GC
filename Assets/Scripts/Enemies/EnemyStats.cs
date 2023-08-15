@@ -16,48 +16,64 @@ public class EnemyStats : MonoBehaviour
     public float despawnDistance = 20f;
     Transform player;
 
-    void Awake() {
+    void Awake()
+    {
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
     }
 
-    void Start() {
+    void Start()
+    {
         player = FindObjectOfType<PlayerStats>().transform;
     }
 
-    void Update() {
-        if (Vector2.Distance(transform.position, player.position) >= despawnDistance) {
+    void Update()
+    {
+        if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        {
             ReturnEnemy();
         }
     }
 
-    private void ReturnEnemy() {
+    private void ReturnEnemy()
+    {
         EnemySpawn es = FindObjectOfType<EnemySpawn>();
         transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
     }
 
-    public void TakeDamage(float dmg) {
+    public void TakeDamage(float dmg)
+    {
+
+        AudioManager.Instance.PlaySFX("Hit");
+
         currentHealth -= dmg;
 
-        if (currentHealth <= 0) {
+        if (currentHealth <= 0)
+        {
             Kill();
         }
     }
 
-    private void Kill() {
+    private void Kill()
+    {
+        AudioManager.Instance.PlaySFX("Kill");
         Destroy(gameObject);
     }
 
-    void OnCollisionStay2D(Collision2D col) {
-        if (col.gameObject.CompareTag("Player")) {
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(currentDamage);
         }
     }
 
-    private void OnDestroy() {
-        if (!gameObject.scene.isLoaded) {
+    private void OnDestroy()
+    {
+        if (!gameObject.scene.isLoaded)
+        {
             return;
         }
 
