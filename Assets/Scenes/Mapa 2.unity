@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -3, y: 10}
+  m_SizeDelta: {x: 186.9609, y: 78.876}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213204226
 MonoBehaviour:
@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 213204227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1195447369}
+        m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &213204227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28164,7 +28176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4296ed5f47d487c48b8548c216737402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 1820224822}
 --- !u!4 &1195447370
 Transform:
   m_ObjectHideFlags: 0
@@ -28312,7 +28324,7 @@ GameObject:
   - component: {fileID: 1627643144}
   - component: {fileID: 1627643143}
   m_Layer: 5
-  m_Name: Resume
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28335,8 +28347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -63.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5, y: -89}
+  m_SizeDelta: {x: 147.8322, y: 62.3682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627643143
 MonoBehaviour:
@@ -28381,7 +28393,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1627643144}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1195447369}
+        m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
+        m_MethodName: Home
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1627643144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28685,7 +28709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1820224823
 RectTransform:
   m_ObjectHideFlags: 0
