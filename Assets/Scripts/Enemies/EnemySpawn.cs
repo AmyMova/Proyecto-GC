@@ -29,6 +29,8 @@ public class EnemySpawn : MonoBehaviour
     public int currentWaveCount;
     Transform player;
 
+    SessionManager _sessionManager;
+
     // Creamos una serie de variables con las que tendremos un control
     // a tiempo real del estado de las oleadas y de cuantos enemigos
     // deberia de haber en pantalla.
@@ -50,6 +52,11 @@ public class EnemySpawn : MonoBehaviour
         player = FindObjectOfType<PlayerStats>().transform;
         CalculateWaveQuota();
         firstWave();
+    }
+
+    void Awake()
+    {
+        _sessionManager = SessionManager.Instance;
     }
 
     void firstWave() {
@@ -129,5 +136,6 @@ public class EnemySpawn : MonoBehaviour
     // de enemigos, pueda aparecer uno tras haber eliminado a uno del conjunto.
     public void OnEnemyKilled() {
         enemiesAlive--;
+        _sessionManager.Player.puntos +=5;
     }
 }

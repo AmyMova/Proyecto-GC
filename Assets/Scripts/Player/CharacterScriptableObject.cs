@@ -31,4 +31,10 @@ public class CharacterScriptableObject : ScriptableObject {
     [SerializeField]
     float magnet;
     public float Magnet { get => magnet; private set => magnet = value; }
+
+    [SerializeField]
+    public int puntos;
+    public int Puntos{ get => puntos; set => puntos = value; }
+
+
 }

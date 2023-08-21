@@ -22,6 +22,23 @@ public class PlayerStats : MonoBehaviour {
     public float currentProjectileSpeed;
     [HideInInspector]
     public float currentMagnet;
+    [HideInInspector]
+    public int puntos;
+
+
+
+    void Awake() {
+
+        currentHealth = characterData.MaxHealth;
+        currentRecovery = characterData.Recovery;
+        currentMoveSpeed = characterData.MoveSpeed;
+        currentMight = characterData.Might;
+        currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
+        
+        SpawnWeapon(characterData.StartingWeapon);
+    }
+
 
     // Creamos las variables que utilizaremos para manejar
     // la experiencia y los niveles del personaje
@@ -52,17 +69,7 @@ public class PlayerStats : MonoBehaviour {
 
     public List<LevelRange> levelRanges;
 
-    void Awake() {
-        currentHealth = characterData.MaxHealth;
-        currentRecovery = characterData.Recovery;
-        currentMoveSpeed = characterData.MoveSpeed;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
-        currentMagnet = characterData.Magnet;
-
-        SpawnWeapon(characterData.StartingWeapon);
-    }
-
+    
     // Este metodo es el encargado de añadir a la lista las nuevas armas que
     // el jugador vaya consiguiendo en su partida.
     public void SpawnWeapon(GameObject weapon) {
