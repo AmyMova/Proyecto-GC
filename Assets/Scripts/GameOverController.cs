@@ -17,7 +17,7 @@ public class GameOverController : MonoBehaviour
 
     void Start()
     {
-        int puntosActual = _sessionManager.Player.puntos;
+        int puntosActual = _sessionManager.contador.Puntaje;
 
         puntaje.text = puntosActual.ToString();
     }

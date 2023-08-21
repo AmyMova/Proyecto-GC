@@ -5,6 +5,6 @@ using UnityEngine;
 public class SessionManager : Singleton<SessionManager>
 {
     [HideInInspector]
-    public CharacterScriptableObject Player;
+    public Contador contador;
 
 }

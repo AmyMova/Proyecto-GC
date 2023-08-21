@@ -16,11 +16,14 @@ public class EnemyStats : MonoBehaviour
     public float despawnDistance = 20f;
     Transform player;
 
+    SessionManager _sessionManager;
+
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
+        _sessionManager = SessionManager.Instance;
     }
 
     void Start()
@@ -78,6 +81,7 @@ public class EnemyStats : MonoBehaviour
         }
 
         EnemySpawn es = FindAnyObjectByType<EnemySpawn>();
+        _sessionManager.contador.Incrementar();
         es.OnEnemyKilled();
     }
 }

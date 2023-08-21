@@ -64,12 +64,16 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotation);
     }
 
+    public float GetCurrentDamage() {
+        return currentDamage *= FindObjectOfType<PlayerStats>().currentMight;
+    }
+
     // Este metodo se ddispara en el momento en que el projectil
     // choca contra un enemigo para asi bajarle la vida.
     protected virtual void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Enemy")) {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(GetCurrentDamage());
             ReducePierce();
         }
     }

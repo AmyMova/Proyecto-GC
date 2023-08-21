@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8562829780106643282}
   m_Layer: 0
   m_Name: Ogro
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a513acdc86b5204db267daa89ff5c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drops: []
+  drops:
+  - name: Blue gem
+    item: {fileID: 8300795091028265625, guid: 1555eb15775ef294f8ce0d87aecc9449, type: 3}
+    dropRate: 100
 --- !u!61 &8562829780106643282
 BoxCollider2D:
   m_ObjectHideFlags: 0

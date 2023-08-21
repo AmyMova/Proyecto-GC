@@ -157,5 +157,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drops:
   - name: Blue Gem
-    itemPrefab: {fileID: 8300795091028265625, guid: 1555eb15775ef294f8ce0d87aecc9449, type: 3}
+    item: {fileID: 8300795091028265625, guid: 1555eb15775ef294f8ce0d87aecc9449, type: 3}
     dropRate: 100

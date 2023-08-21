@@ -17,3 +17,8 @@ MonoBehaviour:
   speed: 10
   cooldownDuration: 1
   pierce: 1
+  level: 1
+  nextLevelPrefab: {fileID: 2343933511845348027, guid: 62fb33ec30c168a47ba278d0138ab722, type: 3}
+  name: Daga
+  description: Dispara dagas en la direccion que el jugador se mueva
+  icon: {fileID: 1425981946, guid: 150aa07ed2dd1e840b638aeb85239314, type: 3}

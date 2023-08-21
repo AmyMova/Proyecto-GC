@@ -16,8 +16,7 @@ GameObject:
   - component: {fileID: 1992735003508813005}
   - component: {fileID: 1992735003508812994}
   - component: {fileID: 1992735003508812995}
-  - component: {fileID: 560988644025837424}
-  - component: {fileID: 700584353042695834}
+  - component: {fileID: 2077838746476301377}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -188,7 +187,8 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 0
-  spawnedWeapons: []
+  weaponIndex: 0
+  passiveItemIndex: 0
   invincibilityDuration: 0.5
   levelRanges: []
 --- !u!114 &1992735003508812994
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87589e0dab075094eba6fa9a6d6ac03d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &560988644025837424
+--- !u!114 &2077838746476301377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,26 +229,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 1992735003508812992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc38ab255da714f4992c1b9790934de9, type: 3}
+  m_Script: {fileID: 11500000, guid: aeec33740a4603f4a9bba7adff5de53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &700584353042695834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992735003508812992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b89e7d0b183c214ca3c6d1a1678ca8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack:
-    m_PersistentCalls:
-      m_Calls: []
-  animator: {fileID: 1992735003508813004}
-  weaponData: {fileID: 11400000, guid: 63c08a309716cda4e9b7efcf1191f986, type: 2}
+  weaponSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  weaponLevels: 000000000000000000000000000000000000000000000000
+  weaponUISlots: []
+  passiveItemSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  passiveItemLevels: 000000000000000000000000000000000000000000000000
+  passiveItemUISlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  weaponUpgradeOptions:
+  - initialWeapon: {fileID: 0}
+    weaponData: {fileID: 0}
+  passiveItemUpgradeOptions:
+  - initialPassiveItem: {fileID: 0}
+    passiveItemData: {fileID: 0}
+  upgradeUIOptions:
+  - upgradeNameDisplay: {fileID: 0}
+    upgradeDescriptionDisplay: {fileID: 0}
+    upgradIcon: {fileID: 0}
+    upgradeButton: {fileID: 0}
 --- !u!1 &3039138113113599690
 GameObject:
   m_ObjectHideFlags: 0

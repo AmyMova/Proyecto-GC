@@ -42,6 +42,8 @@ public class PlayerStats : MonoBehaviour {
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentMagnet = characterData.Magnet;
+
+        inventory = GetComponent<InventoryManager>();
         
         SpawnWeapon(characterData.StartingWeapon);
     }
@@ -54,9 +56,9 @@ public class PlayerStats : MonoBehaviour {
     public int level = 1;
     public int experienceCap;
 
-    // Creamos una lista la cual contendra las armas que consigue
-    // el jugador y que se iran utilizando cada cierto tiempo.
-    public List<GameObject> spawnedWeapons;
+    InventoryManager inventory;
+    public int weaponIndex;
+    public int passiveItemIndex;
 
     // Aqui se encuentran las variables que maneja el tiempo de
     // invencibilidad cada vez que el personaje es golpeado.
@@ -80,9 +82,27 @@ public class PlayerStats : MonoBehaviour {
     // Este metodo es el encargado de añadir a la lista las nuevas armas que
     // el jugador vaya consiguiendo en su partida.
     public void SpawnWeapon(GameObject weapon) {
+        if(weaponIndex >= inventory.weaponSlots.Count - 1) {
+            return;
+        }
+
         GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
         spawnedWeapon.transform.SetParent(transform);
-        spawnedWeapons.Add(spawnedWeapon);
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<WeaponController>());
+
+        weaponIndex++;
+    }
+
+    public void SpawnPassiveItem(GameObject weapon) {
+        if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1) {
+            return;
+        }
+
+        GameObject spawnedPassiveItem = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnedPassiveItem.transform.SetParent(transform);
+        inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>());
+
+        passiveItemIndex++;
     }
 
     void Start() {
@@ -126,6 +146,7 @@ public class PlayerStats : MonoBehaviour {
             }
 
             experienceCap += experienceCapIncrease;
+            GameManager.instance.StartLevelUp();
         }
     }
 
