@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     PlayerStats player;
 
     Rigidbody2D rb;
+    [SerializeField]
+    Animator animator;
+    Vector2 _direction;
+    Vector2 _lastDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() {
         InputManagement();
+        HandleAnimator();
+    }
+
+     void HandleAnimator()
+    {
+        animator.SetFloat("horizontal", _direction.x);
+        animator.SetFloat("vertical", _direction.y);
+        animator.SetFloat("speed", _direction.sqrMagnitude);
     }
 
     void FixedUpdate() {
@@ -40,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
     void InputManagement() {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+        _lastDirection = _direction;
+        _direction.x = Input.GetAxisRaw("Horizontal");
+        _direction.y = Input.GetAxisRaw("Vertical");
 
         moveDir = new Vector2(moveX, moveY).normalized;
 

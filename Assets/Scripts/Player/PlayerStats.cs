@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour {
-
+    
+    [HideInInspector]
+    public UnityEvent damage;
+    [SerializeField]
+    public Animator animator;
     // Creamos una variable la cual contiene los parametros
     // del personaje.
     [SerializeField]
@@ -28,6 +33,8 @@ public class PlayerStats : MonoBehaviour {
 
 
     void Awake() {
+      
+        
 
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
@@ -87,8 +94,12 @@ public class PlayerStats : MonoBehaviour {
     void Update() {
         if (invincibilityTimer > 0) {
             invincibilityTimer -= Time.deltaTime;
-        } else {
+            
+        }
+        else
+        {
             isInvincible = false;
+            
         }
 
         Recover();
@@ -123,6 +134,7 @@ public class PlayerStats : MonoBehaviour {
     public void TakeDamage(float dmg) {
         if (!isInvincible) {
             currentHealth -= dmg;
+            animator.SetTrigger("getHurt");
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
@@ -136,6 +148,8 @@ public class PlayerStats : MonoBehaviour {
     // Este es el metodo que se dispara cuando el jugador muere
     // y es llevado a la pantalla de Game Over
     void Kill() {
+        
+
         SceneManager.LoadScene(1);
     }
 
