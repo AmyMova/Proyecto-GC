@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour {
-    
+
     [HideInInspector]
     public UnityEvent damage;
     [SerializeField]
@@ -33,8 +33,8 @@ public class PlayerStats : MonoBehaviour {
 
 
     void Awake() {
-      
-        
+
+
 
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour {
         currentMagnet = characterData.Magnet;
 
         inventory = GetComponent<InventoryManager>();
-        
+
         SpawnWeapon(characterData.StartingWeapon);
     }
 
@@ -78,11 +78,11 @@ public class PlayerStats : MonoBehaviour {
 
     public List<LevelRange> levelRanges;
 
-    
+
     // Este metodo es el encargado de añadir a la lista las nuevas armas que
     // el jugador vaya consiguiendo en su partida.
     public void SpawnWeapon(GameObject weapon) {
-        if(weaponIndex >= inventory.weaponSlots.Count - 1) {
+        if (weaponIndex >= inventory.weaponSlots.Count - 1) {
             return;
         }
 
@@ -114,12 +114,10 @@ public class PlayerStats : MonoBehaviour {
     void Update() {
         if (invincibilityTimer > 0) {
             invincibilityTimer -= Time.deltaTime;
-            
-        }
-        else
-        {
+
+        } else {
             isInvincible = false;
-            
+
         }
 
         Recover();
@@ -169,9 +167,9 @@ public class PlayerStats : MonoBehaviour {
     // Este es el metodo que se dispara cuando el jugador muere
     // y es llevado a la pantalla de Game Over
     void Kill() {
-        
 
-        SceneManager.LoadScene(1);
+
+        SceneManager.LoadScene(3);
     }
 
     // Este metodo es el encargado de curar al jugador cuando

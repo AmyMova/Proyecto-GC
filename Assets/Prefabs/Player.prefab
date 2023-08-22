@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 1992735003508812994}
   - component: {fileID: 1992735003508812995}
   - component: {fileID: 2077838746476301377}
+  - component: {fileID: 7193897359786588541}
+  - component: {fileID: -7252424671290332037}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -257,16 +259,47 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   weaponUpgradeOptions:
-  - initialWeapon: {fileID: 0}
+  - weaponUpgradeIndex: 0
+    initialWeapon: {fileID: 0}
     weaponData: {fileID: 0}
   passiveItemUpgradeOptions:
-  - initialPassiveItem: {fileID: 0}
+  - passiveItemUpgradeIndex: 0
+    initialPassiveItem: {fileID: 0}
     passiveItemData: {fileID: 0}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 0}
     upgradeDescriptionDisplay: {fileID: 0}
     upgradIcon: {fileID: 0}
     upgradeButton: {fileID: 0}
+--- !u!114 &7193897359786588541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992735003508812992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b89e7d0b183c214ca3c6d1a1678ca8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 63c08a309716cda4e9b7efcf1191f986, type: 2}
+--- !u!114 &-7252424671290332037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992735003508812992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc38ab255da714f4992c1b9790934de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3039138113113599690
 GameObject:
   m_ObjectHideFlags: 0
