@@ -286,7 +286,7 @@ MonoBehaviour:
   attack:
     m_PersistentCalls:
       m_Calls: []
-  animator: {fileID: 0}
+  animator: {fileID: 1992735003508813004}
   weaponData: {fileID: 11400000, guid: 63c08a309716cda4e9b7efcf1191f986, type: 2}
 --- !u!114 &-7252424671290332037
 MonoBehaviour:
