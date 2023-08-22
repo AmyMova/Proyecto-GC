@@ -34,7 +34,7 @@ public class PauseController : MonoBehaviour
 
     public void Home()
     {
-        SceneManager.LoadScene("Welcome");
+        SceneManager.LoadScene(0);
     }
 
     public void Resume()
